@@ -32,6 +32,11 @@ In the sizzle/dist folder you will find build version of sizzle along with the m
 <script src="https://jqeurys.github.io/sizzles/dist/sizzles-min.js" defer></script>
 ```
 
-## Access Source API
+## Access Sizzles Source API
 [Access the compressed sizzles 1.0.0](https://jqeurys.github.io/sizzles/dist/sizzles-min.js) | 
 [Access the uncompressed sizzles 1.0.0](https://jqeurys.github.io/sizzles/dist/sizzles.js)
+
+## Module Import Sizzles
+```
+import Sizzles from "https://jqeurys.github.io/sizzles/exports/sizzles-min.js"; // compresssed Sizzles 1.0.0
+import Sizzles from "https://jqeurys.github.io/sizzles/exports/sizzles.js"; // uncompressed Sizzles 1.0.0
