@@ -2,6 +2,9 @@
 
 ![Author](https://codingmodassir.000webhostapp.com/badges/author/Author-coding-modassir.svg)
 ![Version](https://codingmodassir.000webhostapp.com/badges/sizzles/Sizzles-v1.0.svg)
+![Language](http://codingmodassir.000webhostapp.com/badges/lang/language-Javascript.svg)
+![License](http://codingmodassir.000webhostapp.com/badges/license/license-MIT.svg)
+![Release](http://codingmodassir.000webhostapp.com/badges/releases/releases-1.svg)
 
 **Sizzles is A Pure-Javascript CSS Advance selector engine to be easily access DOM-Elements on advance lavel v1.0.0**
 
