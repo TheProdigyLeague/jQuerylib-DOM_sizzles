@@ -29,5 +29,5 @@ In the sizzle/dist folder you will find build version of sizzle along with the m
 **Note:** We suggesst You implement Sizzles always in under head section. or body of last section. use only
 
 ```
-<script src="https://jqeurys.github.io/dist/sizzles.min.js" defer></script>
+<script src="https://jqeurys.github.io/sizzles/dist/sizzles-min.js" defer></script>
 ```
