@@ -33,5 +33,5 @@ In the sizzle/dist folder you will find build version of sizzle along with the m
 ```
 
 ## Access Source API
-[Access the compressed sizzles 1.0.0](https://jqeurys.github.io/sizzles/dist/sizzles-min.js)
+[Access the compressed sizzles 1.0.0](https://jqeurys.github.io/sizzles/dist/sizzles-min.js) | 
 [Access the uncompressed sizzles 1.0.0](https://jqeurys.github.io/sizzles/dist/sizzles.js)
