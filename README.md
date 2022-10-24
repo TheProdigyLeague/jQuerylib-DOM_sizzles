@@ -23,3 +23,11 @@ git clone git://github.com/jquery/sizzle.git
 ```
 
 In the sizzle/dist folder you will find build version of sizzle along with the minified copy and associated map file.
+
+## Implement Sizzles on you webpage
+
+**Note:** We suggesst You implement Sizzles always in under head section. or body of last section. use only
+
+```
+<script src="https://jqeurys.github.io/dist/sizzles.min.js" defer></script>
+```
