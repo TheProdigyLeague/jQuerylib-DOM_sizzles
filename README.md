@@ -6,7 +6,7 @@
 ![License](http://codingmodassir.000webhostapp.com/badges/license/license-MIT.svg)
 ![Release](http://codingmodassir.000webhostapp.com/badges/releases/releases-1.svg)
 
-**Sizzles is A Pure-Javascript CSS Advance selector engine to be easily access DOM-Elements on advance lavel v1.0.0**
+**Sizzles is a Pure-Javascript CSS Advanced selector engine that is easily accessed in DOM-Elements on an advanced level v-1.0.0**
 
 * [Source Repositry](https://github.com/jqeurys/sizzles/)
 * [Project Home Page](https://github.com/jqeurys/sizzles/wiki)
@@ -16,33 +16,37 @@
 
 ## How to build Sizzle
 
-Clone a copy of the main Sizzle git repo by running:
+> Git Clone:
 
-```
+```git
 git clone git://github.com/jquery/sizzle.git
 ```
 
-In the sizzle/dist folder you will find build version of sizzle along with the minified copy and associated map file.
+In `sizzle/dist` Find the build version of sizzle along with a `sizzle/dist/build.min` copy and an associated `.map` file.
 
-## Download Sizzles using npm
+> Download Sizzle using npm
 
-```
+```npm
 1 | npm install sizzles
 ```
 
-## Implement Sizzles on you webpage
+ > Implement Sizzles on your web-page
 
-**Note:** We suggesst You implement Sizzles always in under head section. or body of last section. use only
+**Note:** We suggest (You) implement Sizzles in the Header section. Or in the body of the last section. Use only:
 
-```
+```javascript
 <script src="https://jqeurys.github.io/sizzles/dist/sizzles-min.js" defer></script>
 ```
 
-## Access Sizzles Source API
+### Access Sizzle Source - API
+
 [Access the compressed sizzles 1.0.0](https://jqeurys.github.io/sizzles/dist/sizzles-min.js) | 
 [Access the uncompressed sizzles 1.0.0](https://jqeurys.github.io/sizzles/dist/sizzles.js)
 
-## Module Import Sizzles
-```
+#### Modulus Import of Sizzles
+
+```python
 import Sizzles from "https://jqeurys.github.io/sizzles/exports/sizzles-min.js"; // compresssed Sizzles 1.0.0
 import Sizzles from "https://jqeurys.github.io/sizzles/exports/sizzles.js"; // uncompressed Sizzles 1.0.0
+```
+
