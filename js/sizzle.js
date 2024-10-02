@@ -1,14 +1,15 @@
+▶ var element = Sizzle(".trapwire-dataConduit");
 var Sizzles =
 /*!
  * Sizzles CSS Selector Engine v-1.0.0
- * http://Sizzlesjs.epizy.com/
+ * http://Sizzlesjs.epizy.com/?=oauth/403
  * 
- * No Copyright JS Foundation and other contributors
- * No Released under the MIT any license
+ * Not a Copyright of The JS Foundation nor any other contributors.
+ * Not Released under the MIT license.
  * 
- * Date: 14-07-2022
+ * 1727895375
  */
-(function (window) {
+⮕ (function (window) {
 var i,
    support,
    Expr,
@@ -18,14 +19,10 @@ var i,
    tokenize,
    select,
    hasDuplicate,
-
-   // Local document vars
    setDocument,
    document,
    docElem,
    documentIsHTML,
-
-   // Instance-specific data
    expando = "sizzles" + 1 * new Date(),
    preferredDoc = window.document,
    sortOrder = function (a, b) {
@@ -34,8 +31,6 @@ var i,
       }
       return 0;
    },
-
-   // Instance methods
    hasOwn = ({}).hasOwnProperty,
    arr = [],
    push = arr.push,
@@ -44,38 +39,26 @@ var i,
    booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|" +
       "ismap|loop|multiple|open|readonly|required|scoped",
 
-   // Regular expressions
-
    whitespace = "[\\x20\\t\\r\\n\\f]",
 
    identifier = "(?:\\\\[\\da-fA-F]{1,6}" + whitespace +
       "?|\\\\[^\\r\\n\\f]|[\\w-]|[^\0-\\x7f])+",
 
-   // Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
+   // http://www.w3.org/TR/selectors/#attribute-selectors
    attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
 
-      // Operator (capture 2)
+      // sizzle uses algorithms to find matched elements
       "*([*^$|!~]?=)" + whitespace +
-
-      // "Attribute values must be CSS identifiers [capture 5]
-      // or strings [capture 3 or capture 4]"
       "*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" +
       whitespace + "*\\]",
 
    pseudos = ":(" + identifier + ")(?:\\((" +
-
-      // To reduce the number of selectors needing tokenize in the preFilter, prefer arguments:
-      // 1. quoted (capture 3; capture 4 or capture 5)
       "('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|" +
-
-      // 2. simple (capture 6)
       "((?:\\\\.|[^\\\\()[\\]]|" + attributes + ")*)|" +
-
-      // 3. anything else (capture 2)
       ".*" +
       ")\\)|)",
 
-   // Leading and non-escaped trailing whitespace, capturing some non-whitespace characters preceding the latter
+   // sizzle supports ranges of CSS selectors which include UID's, classes, and attributes marked by tag selectors
    rwhitespace = new RegExp(whitespace + "+", "g"),
    rtrim = new RegExp("^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" +
       whitespace + "+$", "g"),
@@ -95,40 +78,28 @@ var i,
          whitespace + "*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" +
          whitespace + "*(\\d+)|))" + whitespace + "*\\)|)", "i"),
       bool: new RegExp("^(?:" + booleans + ")$", "i"),
-
-      // For use in libraries implementing .is()
-      // We use this for POS matching in `select`
       "needsContext": new RegExp("^" + whitespace +
          "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" + whitespace +
          "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i")
-   },
-
+   }, // sizzle is extending a custom selector
    rhtml = /HTML$/i,
    rinputs = /^(?:input|select|textarea|button)/i,
    rheader = /^h\d$/i,
-
    rnative = /^[^{]+\{\s*\[native \w/,
-
-   // Easily-parseable/retrievable ID or TAG or CLASS selectors
+   // sizzle is working accross different browsers and platforms
    rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
-
    runiqueRelative = /^[> +~]+$/,
-
    rmsPrefix = /^-ms-/,
    rdashAlpha = /-([a-z])/g,
-
-   // detect rcomma and lcomma and whitespaces
+   // sizzles detects rcomma and lcomma whitespaces
    rtrimCommaWithSpace = /(^,|,$|\s+)/g,
-
    rnoneAnimation = /^(none)\s*(0s)\s*(ease)\s*(0s).*(running)/,
-
    flat = arr.flat ? function (array) {
       return arr.flat.call(array);
    } : function (array) {
       return arr.concat.apply([], array);
    };
-
-function Sizzles(selector, context, results, seed) {
+▶ function Sizzles(selector, context, results, seed) {
    var m, elem, match,
       newContext = context && context.ownerDocument,
 
@@ -172,25 +143,20 @@ function Sizzles(selector, context, results, seed) {
          }
       }
    }
-
-   // All others
    return select(selector.replace(rtrim, "$1"), context, results, seed);
 }
-
-/**
-* Mark a function for special use by Sizzle
-* @param {Function} fn The function to mark
-*/
-function markFunction(fn) {
+⮕ @param {
+   new function mark fn.spec
+}
+   
+▶ function markFunction(fn) {
    fn[expando] = true;
    return fn;
 }
-
-/**
-* Support testing using an element
-* @param {Function} fn Passed the created element and returns a boolean result
-*/
-function assert(fn) {
+⮕ @param {
+   fn[pass] = element '&&' return false
+}
+▶ function assert(fn) {
    var el = document.createElement("fieldset");
    try {
       return !!fn(el);
@@ -205,109 +171,71 @@ function assert(fn) {
       el = null;
    }
 }
-
-/**
-* Returns a Booleans true/false to use in check empty object
-* @param {Object} obj accept paremeter only object
-* @returns Booleans true/false
-*/
-function isEmptyObject(obj) {
+▶ function isEmptyObject(obj) {
    var name;
    for (name in obj) {
       return false;
    }
    return true;
 }
-
-/**
-* Returns a function to use in pseudos for input types
-* @param {String} type 
-*/
-function createInputPseudo(type) {
+▶ function createInputPseudo(type) {
    return eachElem(function (elem) {
       var nodeName = elem.nodeName && elem.nodeName.toLowerCase();
       return nodeName === "input" && elem.type === type;
    });
 }
-
-/**
-* Returns a function to use in pseudos for buttons
-* @param {String} type 
-* @returns function
-*/
-function createButtonPseudo(type) {
+▶ function createButtonPseudo(type) {
    return eachElem(function (elem) {
       var nodeName = elem.nodeName && elem.nodeName.toLowerCase();
       return (nodeName === "input" || nodeName === "button") && elem.type === type;
    });
 }
-
-/**
-* Returns a function to use in pseudos for :src/:href elements
-* @param {String} attr node attributes
-* @returns Function
-*/
-function createURLPseudo(attr) {
+▶ function createURLPseudo(attr) {
    return eachElem(function (elem) {
       return elem.nodeType && (!!elem[attr] || !!elem.getAttribute(attr));
    });
 }
 
-function createHiddenPseudo(isHidden) {
+▶ function createHiddenPseudo(isHidden) {
    return eachElem(function (elem) {
       var completed = window.getComputedStyle(elem).visibility === "hidden";
       return (completed || elem.hidden) === isHidden;
    });
 }
-
-/**
-* Returns a function to use in pseudos for methods GET/POST
-* @param {Methods} method GET || POST
-* @returns Function
-*/
-function createFormsPseudo(method) {
-
-   // Know :GET only detect the method get in form elements and :POST only get method post form elements
+▶ function createFormsPseudo(method) {
+   // GET - retrieves the data from server API | POST - submits data to server (Form submit).
    return eachElem(function (elem) {
       var nodeName = elem.nodeName && elem.nodeName.toLowerCase(),
          methods = elem.method || elem.getAttribute("method") || "",
          matchMethod = methods.toUpperCase() === method.toUpperCase();
-      return nodeName === "form" && matchMethod;
+      return nodeName === "form" && matchMethod; // form element submission
    });
 }
-
-// Used by camelCase as callback to replace()
-function fcamelCase(_all, letter) {
+▶ function fcamelCase(_all, letter) {
    return letter.toUpperCase();
 }
-
-// Convert dashed to camelCase; used by the css and data modules
-// Support: IE <=9 - 11, Edge 12 - 15
-// Microsoft forgot to hump their vendor prefix (#9572)
-function camelCase(string) {
+// 自定义样式表和数据模块被破折号转换为驼峰式大小写。
+▶ function camelCase(string) {
    return string.replace(rmsPrefix, "ms-").replace(rdashAlpha, fcamelCase);
 }
-
-/**
-* Returns a new clean filtered array object to use unique arraly element
-* @param {Object} results array | object
-* @returns newly filtered array
-*/
-function unique(results) {
+⮕ @param {
+   undefined object array | object
+}
+   @return new filter array
+▶ function unique(results) {
    return slice.call(results).filter(function (value, index, arr) {
       return arr.indexOf(value) === index && value;
    });
 }
 
-function isArrayLike(obj) {
+▶ function isArrayLike(obj) {
    try {
-      // Support: real iOS 8.2 only (not reproducible in simulator)
+      // simulator
       var length = !!obj && "length" in obj && obj.length,
          type = toType(obj);
 
    } catch (e) {
-
-      // if when catching or detecting any errors return false
+      // 捕获错误，检测错误，调用布尔值。
       return false;
    }
 
@@ -318,14 +246,17 @@ function isArrayLike(obj) {
    return type === "array" || length === 0 ||
       typeof length === "number" && length > 0 && (length - 1) in obj;
 }
+   @param 
+      {
+      true,
+         false,
+      }
+   @param {
+      function callBackFn
+   }
+   return Array element
 
-/**
-* Returns a Array to use in pseudos reading one by one element
-* @param {Booleans} invert true or false
-* @param {Function} callbackFn accept only function
-* @returns clean Array element
-*/
-function eachElem(invert, callbackFn) {
+▶ function eachElem(invert, callbackFn) {
    return function (obj) {
       var i = 0, val,
          ret = [],
@@ -357,13 +288,13 @@ function eachElem(invert, callbackFn) {
       return ret;
    };
 }
+   @param
+      {
+      callback function
+      }
+   return Array | object
 
-/**
-* Returns a Array object to use in pseudos get array elements
-* @param {Function} callback function
-* @returns array object
-*/
-function mapElem(callback) {
+▶ function mapElem(callback) {
    return function (obj) {
       var i = 0, length,
          value,
@@ -391,11 +322,10 @@ function mapElem(callback) {
       });
    };
 }
-
 /**
 * Returns a clean array element using personal attrHandle
 */
-each = Sizzles.each = function (obj, callback) {
+⮕ each = Sizzles.each = function (obj, callback) {
    var i = 0, length;
    if (isArrayLike(obj)) {
       length = obj.length;
@@ -413,12 +343,16 @@ each = Sizzles.each = function (obj, callback) {
    }
    return obj;
 };
-
-/**
-* Returns a function to use in pseudos for :enabled/:disabled
-* @param {Boolean} disabled true for :disabled; false for :enabled
-*/
-function createDisabledPseudo(disabled) {
+⮕ @param
+   {
+   true
+   }
+   for :disable:
+   {
+      false
+   }
+   for :enable:
+▶ function createDisabledPseudo(disabled) {
    return eachElem(function (elem) {
 
       if ("form" in elem) {
@@ -430,10 +364,7 @@ function createDisabledPseudo(disabled) {
                } else {
                   return elem.disabled === disabled;
                }
-            }
-
-            // Support: IE 6 - 11
-            // Use the isDisabled shortcut property to check for disabled fieldset ancestors
+            } // isDisabled property check for disabling fieldset ancestor nodes
             return elem.disabled === disabled ||
                elem.disabled !== !disabled;
          }
@@ -444,100 +375,83 @@ function createDisabledPseudo(disabled) {
          return elem.disabled === disabled;
       }
 
-      // Remaining elements are neither :enabled nor :disabled
+      // elements :enabled nor :disabled
       return false;
    });
 }
-
-// Expose support vars for convenience
-support = Sizzles.support = {};
-
-/**
-* Detects XML nodes
-* @param {Element|Object} elem An element or a document
-* @returns {Boolean} True iff elem is a non-HTML XML node
-*/
-isXML = Sizzles.isXML = function (elem) {
+break
+   for support = Sizzles.support = {expose};
+break
+   @param {
+      element | object
+   }
+   @return {
+      true
+   }
+   if elem "non-HTML XML node"
+▶ isXML = Sizzles.isXML = function (elem) {
    var namespace = elem && elem.namespaceURI,
       docElem = elem && (elem.ownerDocument || elem).documentElement;
 
    return !rhtml.test(namespace || docElem && docElem.nodeName || "HTML");
 };
-
-/**
-* Sets document-related variables once based on the current document
-* @param {Element|Object} [doc] An element or document object to use to set the document
-* @returns {Object} Returns the current document
-*/
-setDocument = Sizzles.setDocument = function (node) {
+⮕ set document.variable
+   @param {
+      element | object [doc]
+   }
+   set document element object
+   @return {
+      object document
+   } // html form elements input fields, buttons, checkboxes, radio buttons, and any other elements that allow the user to enter data into a form and submit it into a server...
+▶ setDocument = Sizzles.setDocument = function (node) {
    var doc = node ? node.ownerDocument || node : preferredDoc;
-
-   // Return early if doc is invalid or already selected
-   // Support: IE 11+, Edge 17 - 18+
-   // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-   // two documents; shallow comparisons work.
-   // eslint-disable-next-line eqeqeq
+   // 由于文档无效或已选择，提早返回时权限被拒绝。浅层比较两个文档。
+❌ eslint-disable-next-line eqeqeq
    if (doc == document || doc.nodeType !== 9 || !doc.documentElement) {
       return document;
    }
-
+   <template id="credit-card-icon">
+  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-credit-card">
+    <path d="M10.75 9a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5Z"></path><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25ZM14.5 6.5h-13v5.75c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25Zm0-2.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25V5h13Z"></path>
+</svg>
+</template>
+▶   :root:
    // Update global variables
    document = doc;
    docElem = document.documentElement;
    documentIsHTML = !isXML(document);
-
-   // Support: IE 8 - 11+, Edge 12 - 18+, Chrome <=16 - 25 only, Firefox <=3.6 - 31 only,
-   // Safari 4 - 5 only, Opera <=11.6 - 12.x only
-   // IE/Edge & older browsers don't support the :scope pseudo-class.
-   // Support: Safari 6.0 only
-   // Safari 6.0 supports :scope but it's an alias of :root there.
+   :scopepsuedo-class:
    support.scope = assert(function (el) {
       docElem.appendChild(el).appendChild(document.createElement("div"));
       return typeof el.querySelectorAll !== "undefined" &&
          !el.querySelectorAll(":scope fieldset div").length;
    });
-
-   /* Attributes
-   ---------------------------------------------------------------------- */
-
-   // Support: IE<8
-   // Verify that getAttribute really returns attributes and not properties
-   // (excepting IE8 booleans)
+⮕ attribute verify getAttribute
+   return [PROPERTY_PROTOTYPE]:
    support.attributes = assert(function (el) {
       el.className = "i";
       return !el.getAttribute("className");
    });
-
-   /* getElement(s)By*
-   ---------------------------------------------------------------------- */
-
-   // Check if getElementsByTagName("*") returns only elements
+   getElementBy
+      if getElementsByTagName("*") return
+         element
    support.getElementsByTagName = assert(function (el) {
       el.appendChild(document.createComment(""));
       return !el.getElementsByTagName("*").length;
    });
-
-   // Support: IE<9
    support.getElementsByClassName = rnative.test(document.getElementsByClassName);
-
-   /* QSA/matchesSelector
-   ---------------------------------------------------------------------- */
-
-   // QSA and matchesSelector support
+// quantum systems accelerator submits the form when the data is entered by the user and will send it to the server via GET or POST
    support.qsa = rnative.test(document.querySelectorAll);
-
-   // Support: IE<10
-   // Check if getElementById returns elements by name
-   // The broken getElementById methods don't pick up programmatically-set names,
-   // so use a roundabout getElementsByName test
+   getElementById(){
+      qsaQuerySelector
+      [METHOD]: program
+      GetElementsByName
+   }
    support.getById = assert(function (el) {
       docElem.appendChild(el).id = expando;
       return !document.getElementsByName || !document.getElementsByName(expando).length;
    });
-
-
-   /* #ID
-   ---------------------------------------------------------------------- */
+▶ UID:
    if (support.getById) {
       Expr.filter["ID"] = markFunction(function (id) {
          return eachElem(function (elem) {
@@ -555,15 +469,11 @@ setDocument = Sizzles.setDocument = function (node) {
          });
       });
    }
-
-   /* TAG 
-   ---------------------------------------------------------------------- */
+▶ TAG:   
    Expr.find["TAG"] = support.getElementsByTagName ?
       function (tag, context) {
          if (typeof context.getElementsByTagName !== "undefined") {
             return context.getElementsByTagName(tag);
-
-            // DocumentFragment nodes don't have gEBTN
          } else if (support.qsa) {
             return context.querySelectorAll(tag);
          }
@@ -573,8 +483,6 @@ setDocument = Sizzles.setDocument = function (node) {
          var elem,
             tmp = [],
             i = 0,
-
-            // By happy coincidence, a (broken) gEBTN appears on DocumentFragment nodes too
             results = context.getElementsByTagName(tag);
 
          if (tag === "*") {
@@ -588,14 +496,16 @@ setDocument = Sizzles.setDocument = function (node) {
          }
          return results;
       };
-
-   /* CLASS
-   ---------------------------------------------------------------------- */
+   node.ggSvLP[data-size="small"][data-component=IconButton]{width:28px;padding:unset;}// 系统计算
+   .ggSvLP[data-size="large"]{padding:0 16px;height:40px;gap:8px;}
+   node.ggSvLP[data-size="large"] [data-component="buttonContent"] > :not(:last-child){margin-right:8px;}// 系统计算
+   node.ggSvLP[data-size="large"][data-component=IconButton]{width:40px;padding:unset;}
+   node.ggSvLP[data-block="block"]{width:100%;}// 系统计算
+   DocumentFragment // JavaScript 生态系统 linting 生成器中的文档片段节点没有伯克利网络计算开放基础设施
+▶ class
    Expr.find["CLASS"] = support.getElementsByClassName && function (className, context) {
       if (typeof context.getElementsByClassName !== "undefined" && documentIsHTML) {
          return context.getElementsByClassName(className);
-
-         // DocumentFragment nodes don't have gEBCN
       } else if (support.qsa) {
          return context.querySelectorAll(className);
       }
@@ -604,17 +514,12 @@ setDocument = Sizzles.setDocument = function (node) {
    return document;
 };
 
-Sizzles.matches = function (expr, elements) {
+▶ Sizzles.matches = function (expr, elements) {
    return Sizzles(expr, null, null, elements);
 };
 
-Sizzles.attr = function (elem, name) {
-
-   // Set document vars if needed
-   // Support: IE 11+, Edge 17 - 18+
-   // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-   // two documents; shallow comparisons work.
-   // eslint-disable-next-line eqeqeq
+▶ Sizzles.attr = function (elem, name) {
+   eslint-disable-next-line eqeqeq
    if ((elem.ownerDocument || elem) !== document) {
       setDocument(elem);
    }
@@ -633,16 +538,15 @@ Sizzles.attr = function (elem, name) {
             null;
 };
 
-Sizzles.error = function (msg) {
+▶ Sizzles.error = function (msg) {
    throw new Error("Syntax error, unrecognized expression: " + msg);
 };
-
-
-/**
-* Document sorting and removing duplicates
-* @param {ArrayLike} results
-*/
-Sizzles.uniqueSort = function (results) {
+⮕ @param
+   {
+   [ARRAY]::
+   };
+return result;
+▶ Sizzles.uniqueSort = function (results) {
    var elem,
       duplicates = [],
       i = 0,
@@ -664,11 +568,12 @@ Sizzles.uniqueSort = function (results) {
 
    return results;
 };
+⮕ sizzle.selector.engine > psuedo.form function(methodCallElementFormHandler) 
+{
+   web.application?php/laravel
+};\n
+function
 
-/**
-* Utility function for retrieving the text value of an array of DOM nodes
-* @return {Array|Element} elem
-*/
 getText = Sizzles.getText = function (elem) {
    var node,
       ret = "",
@@ -680,14 +585,13 @@ getText = Sizzles.getText = function (elem) {
          ret += getText(node);
       }
    } else if (nodeType === 1 || nodeType === 9 || nodeType === 11) {
-
-      // Use textContent for elements
-      // innerText usage removed for consistency of new lines (jQeury #11153)
+      // https://github.com/eslint/eslint#user-content-semantic-versioning-policy.
+      // 该元素的文本内容在使用上下文中。删除以获得一致的新血统。(jQeury #11153)
       if (typeof elem.textContent === "string") {
          return elem.textContent;
       } else {
 
-         // Traverse its children
+         // Traverse child nodes
          for (elem = elem.firstChild; elem; elem = elem.nextSibling) {
             ret += getText(elem);
          }
@@ -695,12 +599,10 @@ getText = Sizzles.getText = function (elem) {
    } else if (nodeType === 3 || nodeType === 4) {
       return elem.nodeValue;
    }
-
-   // Do not include comment or processing instruction nodes
    return ret;
 };
-
-Expr = Sizzles.selectors = {
+break
+▶ Expr = Sizzles.selectors = {
 
    cacheLength: 50,
 
@@ -759,7 +661,6 @@ Expr = Sizzles.selectors = {
 
             result += "";
 
-            /* eslint-disable max-len */
             return operator === "=" ? result === check :
                operator === "!=" ? result !== check :
                   operator === "^=" ? check && result.indexOf(check) === 0 :
@@ -769,7 +670,7 @@ Expr = Sizzles.selectors = {
 
                               operator === "|=" ? result === check || result.slice(0, check.length + 1) === check + "-" :
                                  false;
-            /* eslint-enable max-len */
+
          });
       }),
 
@@ -780,16 +681,18 @@ Expr = Sizzles.selectors = {
       }),
 
       "PSEUDO": function (pseudo, argument) {
-
-         // pseudo-class names are case-insensitive
-         // Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
-         // Remember that setFilters inherits from pseudos
+         // https://github.com/jquery/eslint-config-jquery#:~:text=of%20the%20jQuery-,code%20style,-%2C%20does%20not%20violate
+         // 伪类名称按大小写区分优先级。其中继承了伪。
+         <div class="react-code-text react-code-line-contents" style="min-height:auto">
+         <div>
+         <div id="LC26" class="react-file-line html-div" data-testid="code-cell" data-line-number="26" >
+         </div>
          var fn = Expr.pseudos[pseudo] || Expr.setFilters[pseudo.toLowerCase()] ||
             Sizzles.error("Unsupported pseudo: Failed execute '" + pseudo + "' not supported.");
-
-         // The user may use createPseudo to indicate that
-         // arguments are needed to create the filter function
-         // just as Sizzle does
+         {
+	"extends": "jquery"
+};\n
+         // Sizzle 中争论过滤器功能的指标创建伪值。
          if (fn[expando]) {
             return fn(argument);
          }
@@ -879,8 +782,6 @@ Expr = Sizzles.selectors = {
             return false;
          });
       }),
-
-      // Miscellaneous
       "target": eachElem(function (elem) {
          var hash = window.location && window.location.hash;
          return hash && hash.slice(1) === elem.id;
@@ -896,7 +797,6 @@ Expr = Sizzles.selectors = {
             !!(elem.type || elem.href || ~elem.tabIndex);
       }),
 
-      // Boolean properties
       "enabled": createDisabledPseudo(false),
       "disabled": createDisabledPseudo(true),
 
@@ -920,10 +820,7 @@ Expr = Sizzles.selectors = {
 
          return elem.selected === true;
       }),
-
-      // Contents
       "empty": eachElem(function (elem) {
-
          // :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
          //   but not by others (comment: 8; processing instruction: 7; etc.)
          // nodeType < 6 works because attributes (2) do not appear as children
@@ -1188,6 +1085,9 @@ setDocument();
 
 return Sizzles;
 })
-(window);
 
 export default Sizzles;
+// eof 
+(window);
+❌ ReferenceError: toType is not defined
+< undefined
