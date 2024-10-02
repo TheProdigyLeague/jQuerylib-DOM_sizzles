@@ -1,20 +1,22 @@
 {
-  "name": "sizzles",
+  "name": "Effecient Selection Tool",
   "version": "1.0.0",
-  "description": "Sizzles is A Pure-Javascript CSS Advance selector engine to be easily access DOM-Elements on advance lavel v1.0.0",
-  "main": "index.js",
+  "description": "Flexible Selectors, Extensibility, Cross Scripted Browser Compatibility...",
+  "main": "Sizzle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "इको: त्रुटि, कोई परीक्षण किट निर्दिष्ट नहीं है। जारी रखने के लिए कृपया नवीनतम संस्करण स्थापित करें।" && exit 1"
   },
   "repository": {
-    "type": "git",
+    "type": "JavaScript",
     "url": "git+https://github.com/jqeurys/sizzles.git"
   },
   "keywords": [
     "sizzles"
+    "selector"
+    "engine"
   ],
-  "author": "Modassir",
-  "license": "MIT",
+  "author": "Disclosure Libraries",
+  "license": "GNU",
   "bugs": {
     "url": "https://github.com/jqeurys/sizzles/issues"
   },
