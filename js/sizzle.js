@@ -154,7 +154,8 @@ var i,
    return fn;
 }
 ⮕ @param {
-   fn[pass] = element '&&' return false
+   fn[pass] = element
+	   return false
 }
 ▶ function assert(fn) {
    var el = document.createElement("fieldset");
@@ -763,7 +764,7 @@ break
       }),
 
       "lang": markFunction(function (lang) {
-         // lang value must be a valid identifier
+         // lang value must be valid identifier
          if (!ridentifier.test(lang || "")) {
             Sizzle.error("unsupported lang: " + lang);
          }
@@ -821,6 +822,7 @@ break
          return elem.selected === true;
       }),
       "empty": eachElem(function (elem) {
+	      <content-node>
          // :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
          //   but not by others (comment: 8; processing instruction: 7; etc.)
          // nodeType < 6 works because attributes (2) do not appear as children
@@ -929,37 +931,37 @@ break
    }
 };
 
-Expr.pseudos["nth"] = Expr.pseudos["eq"];
-Expr.pseudos["is"] = Expr.pseudos["filter"];
+▶ Expr.pseudos["nth"] = Expr.pseudos["eq"];
+▶ Expr.pseudos["is"] = Expr.pseudos["filter"];
 
 // Add button/input type pseudos
-for (i in { radio: true, checkbox: true, file: true, password: true, image: true }) {
+⮕ for (i in { radio: true, checkbox: true, file: true, password: true, image: true }) {
    Expr.pseudos[i] = createInputPseudo(i);
 }
-for (i in { search: true, url: true, range: true }) {
+⮕ for (i in { search: true, url: true, range: true }) {
    Expr.pseudos[i] = createInputPseudo(i);
 }
-for (i in { submit: true, reset: true }) {
+⮕ for (i in { submit: true, reset: true }) {
    Expr.pseudos[i] = createButtonPseudo(i);
 }
 // Add src/href attribute pseudos
-for (i in { src: true, href: true }) {
+⮕ for (i in { src: true, href: true }) {
    Expr.pseudos[i] = createURLPseudo(i);
 }
 
 
 // Easy API for creating new setFilters
-function setFilters() { }
-setFilters.prototype = Expr.filters = Expr.pseudos;
-Expr.setFilters = new setFilters();
+⮕ function setFilters() { }
+▶ setFilters.prototype = Expr.filters = Expr.pseudos;
+▶ Expr.setFilters = new setFilters();
 
-each(matchExpr.bool.source.match(/\w+/g), function (_i, name) {
+⮕ each(matchExpr.bool.source.match(/\w+/g), function (_i, name) {
    Expr.attrHandle[name] = eachElem(function (elem) {
       return !!(elem[name] || elem.hasAttribute(name));
    });
 });
 
-tokenize = Sizzles.tokenize = function (selector) {
+▶ tokenize = Sizzles.tokenize = function (selector) {
    var matched, soFar, match, groups, type;
 
    soFar = selector.trim();
@@ -1002,7 +1004,7 @@ tokenize = Sizzles.tokenize = function (selector) {
       groups.slice(0);
 }
 
-function getDefaultAllDocumentElements(context) {
+▶ function getDefaultAllDocumentElements(context) {
    var bySet = (context || []).length > 0,
       superMatcher = function (context, results, outermost) {
          var elem, results = results || [],
@@ -1014,7 +1016,6 @@ function getDefaultAllDocumentElements(context) {
             len = elems.length;
 
          // Add elements passing elementMatchers directly to results
-         // Support: IE<9, Safari
          for (; i != len && (elem = elems[i]) != null; i++) {
             if (elem && elem.nodeType) {
                results.push(elem);
@@ -1027,7 +1028,7 @@ function getDefaultAllDocumentElements(context) {
       superMatcher;
 }
 
-select = Sizzles.select = function (selector, context, results, seed) {
+▶ select = Sizzles.select = function (selector, context, results, seed) {
    selector = selector.replace(rtrimCommaWithSpace, " ").trim().split(",");
    var i = 0, token, tokens, j, match, len, matched, combine = [],
 
@@ -1074,11 +1075,10 @@ select = Sizzles.select = function (selector, context, results, seed) {
 // one time assignments
 
 // Sort stability
-support.sortStable = expando.split("").sort(sortOrder).join("") === expando;
+▶ support.sortStable = expando.split("").sort(sortOrder).join("") === expando;
 
-// Support: Chrome 14-35+
 // Always assume duplicates if they aren't passed to the comparison function
-support.detectDuplicates = !!hasDuplicate;
+▶ support.detectDuplicates = !!hasDuplicate;
 
 // Initialize against the default document
 setDocument();
